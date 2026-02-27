@@ -172,12 +172,12 @@
 
         /* ── LEAD AGENT ── */
         .lead-agent {
-            margin-top: 20px;
+            margin-top: 8px;
         }
 
         .connector-vertical {
             width: 2px;
-            height: 30px;
+            height: 16px;
             background: linear-gradient(to bottom, var(--border), transparent);
             margin: 0 auto;
         }
@@ -329,8 +329,27 @@
         }
 
         .dept-card:hover {
-            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
+
+        /* Neon borders per department */
+        .dept-dev .dept-card { border-color: rgba(139, 92, 246, 0.35); box-shadow: 0 0 20px rgba(139, 92, 246, 0.08), inset 0 0 20px rgba(139, 92, 246, 0.03); }
+        .dept-dev .dept-card:hover { border-color: rgba(139, 92, 246, 0.6); box-shadow: 0 0 30px rgba(139, 92, 246, 0.15); }
+
+        .dept-content .dept-card { border-color: rgba(245, 158, 11, 0.35); box-shadow: 0 0 20px rgba(245, 158, 11, 0.08), inset 0 0 20px rgba(245, 158, 11, 0.03); }
+        .dept-content .dept-card:hover { border-color: rgba(245, 158, 11, 0.6); box-shadow: 0 0 30px rgba(245, 158, 11, 0.15); }
+
+        .dept-research .dept-card { border-color: rgba(6, 182, 212, 0.35); box-shadow: 0 0 20px rgba(6, 182, 212, 0.08), inset 0 0 20px rgba(6, 182, 212, 0.03); }
+        .dept-research .dept-card:hover { border-color: rgba(6, 182, 212, 0.6); box-shadow: 0 0 30px rgba(6, 182, 212, 0.15); }
+
+        .dept-design .dept-card { border-color: rgba(236, 72, 153, 0.35); box-shadow: 0 0 20px rgba(236, 72, 153, 0.08), inset 0 0 20px rgba(236, 72, 153, 0.03); }
+        .dept-design .dept-card:hover { border-color: rgba(236, 72, 153, 0.6); box-shadow: 0 0 30px rgba(236, 72, 153, 0.15); }
+
+        .dept-automation .dept-card { border-color: rgba(16, 185, 129, 0.35); box-shadow: 0 0 20px rgba(16, 185, 129, 0.08), inset 0 0 20px rgba(16, 185, 129, 0.03); }
+        .dept-automation .dept-card:hover { border-color: rgba(16, 185, 129, 0.6); box-shadow: 0 0 30px rgba(16, 185, 129, 0.15); }
+
+        .dept-strategy .dept-card { border-color: rgba(59, 130, 246, 0.35); box-shadow: 0 0 20px rgba(59, 130, 246, 0.08), inset 0 0 20px rgba(59, 130, 246, 0.03); }
+        .dept-strategy .dept-card:hover { border-color: rgba(59, 130, 246, 0.6); box-shadow: 0 0 30px rgba(59, 130, 246, 0.15); }
 
         .dept-header {
             font-size: 13px;
@@ -823,7 +842,7 @@
     <div class="departments">
 
         <!-- DEVELOPMENT -->
-        <div class="department">
+        <div class="department dept-dev">
             <div class="dept-connector"></div>
             <div class="dept-card">
                 <div class="dept-header"><span class="dept-icon">⚡</span> Development</div>
@@ -857,7 +876,7 @@
         </div>
 
         <!-- CONTENT -->
-        <div class="department">
+        <div class="department dept-content">
             <div class="dept-connector"></div>
             <div class="dept-card">
                 <div class="dept-header"><span class="dept-icon">✍️</span> Content</div>
@@ -890,7 +909,7 @@
         </div>
 
         <!-- RESEARCH -->
-        <div class="department">
+        <div class="department dept-research">
             <div class="dept-connector"></div>
             <div class="dept-card">
                 <div class="dept-header"><span class="dept-icon">🔬</span> Research</div>
@@ -922,7 +941,7 @@
         </div>
 
         <!-- DESIGN -->
-        <div class="department">
+        <div class="department dept-design">
             <div class="dept-connector"></div>
             <div class="dept-card">
                 <div class="dept-header"><span class="dept-icon">🎨</span> Design</div>
@@ -955,7 +974,7 @@
         </div>
 
         <!-- AUTOMATION -->
-        <div class="department">
+        <div class="department dept-automation">
             <div class="dept-connector"></div>
             <div class="dept-card">
                 <div class="dept-header"><span class="dept-icon">🤖</span> Automation</div>
@@ -989,7 +1008,7 @@
         </div>
 
         <!-- STRATEGY -->
-        <div class="department">
+        <div class="department dept-strategy">
             <div class="dept-connector"></div>
             <div class="dept-card">
                 <div class="dept-header"><span class="dept-icon">📊</span> Strategy</div>
