@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEARE — AI-Powered Solutions, Human-Delivered Results</title>
+    <title>WEARE Inc — AI-Powered Solutions, Human-Delivered Results</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -26,6 +26,8 @@
             --accent-red: #ef4444;
             --accent-cyan: #06b6d4;
             --accent-lime: #84cc16;
+            --glow-blue: rgba(59, 130, 246, 0.15);
+            --glow-purple: rgba(139, 92, 246, 0.15);
         }
 
         body {
@@ -36,6 +38,7 @@
             overflow-x: hidden;
         }
 
+        /* Subtle grid background */
         body::before {
             content: '';
             position: fixed;
@@ -58,7 +61,7 @@
 
         /* ── HEADER ── */
         header {
-            padding: 80px 0 60px;
+            padding: 60px 0 40px;
             text-align: center;
         }
 
@@ -66,127 +69,128 @@
             display: inline-flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .logo-icon {
-            width: 60px;
-            height: 60px;
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            border-radius: 15px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
-            font-size: 28px;
+            font-weight: 800;
+            font-size: 22px;
             letter-spacing: -1px;
-            color: #fff;
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
-            position: relative;
-        }
-
-        .logo-icon::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 17px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            z-index: -1;
-            opacity: 0.4;
-            filter: blur(12px);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
         }
 
         .logo-text {
-            font-size: 42px;
-            font-weight: 900;
-            letter-spacing: -2px;
-        }
-
-        .logo-text-we {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .logo-text-are {
-            color: #e2e8f0;
         }
 
         .tagline {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--text-muted);
             font-weight: 400;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .sub-tagline {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-dim);
-            max-width: 520px;
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* ── HERO STAT BAR ── */
-        .stats-bar {
+        /* ── FOUNDER NODE ── */
+        .founder-section {
             display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin: 48px 0 56px;
-            padding: 24px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            flex-direction: column;
+            align-items: center;
+            margin: 40px 0 0;
         }
 
-        .stat {
+        .founder-node {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            padding: 20px 40px;
             text-align: center;
+            position: relative;
         }
 
-        .stat-value {
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .founder-node::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            opacity: 0.15;
+            z-index: -1;
+            filter: blur(20px);
         }
 
-        .stat-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-dim);
-            margin-top: 4px;
-            font-weight: 600;
+        .founder-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        /* ── AGENT CARDS ── */
+        .founder-role {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ── LEAD AGENT ── */
+        .lead-agent {
+            margin-top: 20px;
+        }
+
+        .connector-vertical {
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(to bottom, var(--border), transparent);
+            margin: 0 auto;
+        }
+
         .agent-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 16px 18px;
+            padding: 16px 20px;
             display: flex;
             align-items: center;
             gap: 14px;
+            position: relative;
             transition: all 0.3s ease;
+            cursor: default;
         }
 
         .agent-card:hover {
             background: var(--bg-card-hover);
-            border-color: rgba(59, 130, 246, 0.25);
+            border-color: rgba(59, 130, 246, 0.3);
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
         .agent-avatar {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 14px;
             flex-shrink: 0;
             color: #fff;
         }
@@ -194,7 +198,7 @@
         .agent-info { flex: 1; }
 
         .agent-name {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -202,12 +206,18 @@
         }
 
         .status-dot {
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: var(--accent-green);
             box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
             animation: pulse 2s infinite;
+        }
+
+        .status-dot.offline {
+            background: var(--text-dim);
+            box-shadow: none;
+            animation: none;
         }
 
         @keyframes pulse {
@@ -224,20 +234,104 @@
         .agent-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
             margin-top: 8px;
         }
 
         .tag {
-            font-size: 9.5px;
+            font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            padding: 3px 7px;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.04);
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
             border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* ── TREE CONNECTORS ── */
+        .tree-connector {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            height: 50px;
+            position: relative;
+        }
+
+        .tree-connector::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 25px;
+            background: var(--border);
+        }
+
+        .tree-connector::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: calc(16.66% + 12px);
+            right: calc(16.66% + 12px);
+            height: 2px;
+            background: var(--border);
+        }
+
+        /* ── DEPARTMENTS GRID ── */
+        .departments {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 0;
+            padding-bottom: 80px;
+        }
+
+        .department {
+            position: relative;
+        }
+
+        .dept-connector {
+            width: 2px;
+            height: 25px;
+            background: var(--border);
+            margin: 0 auto;
+        }
+
+        .dept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .dept-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dept-header {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dept-icon {
+            font-size: 16px;
+        }
+
+        .dept-agents {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         /* Agent colors */
@@ -250,125 +344,23 @@
         .avatar-cyan { background: var(--accent-cyan); }
         .avatar-lime { background: var(--accent-lime); }
 
-        /* ── DEPARTMENTS GRID ── */
-        .departments {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            padding-bottom: 60px;
-        }
-
-        .dept-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .dept-card:hover {
-            border-color: rgba(255, 255, 255, 0.08);
-        }
-
-        .dept-header {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .dept-icon { font-size: 15px; }
-
-        .dept-agents {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        /* ── SERVICES SECTION ── */
-        .services-section {
-            padding: 60px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .services-section h2 {
+        /* ── CTA SECTION ── */
+        .cta-section {
             text-align: center;
+            padding: 60px 0 80px;
+            border-top: 1px solid var(--border);
+            margin-top: 0;
+        }
+
+        .cta-section h2 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 12px;
         }
 
-        .services-section .subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 48px;
-            font-size: 15px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .service-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover {
-            border-color: rgba(59, 130, 246, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .service-icon {
-            font-size: 24px;
-            margin-bottom: 12px;
-        }
-
-        .service-name {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .service-desc {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .service-price {
-            margin-top: 12px;
-            font-size: 12px;
-            color: var(--accent-cyan);
-            font-weight: 600;
-        }
-
-        /* ── CTA ── */
-        .cta-section {
-            text-align: center;
-            padding: 70px 0 80px;
-            border-top: 1px solid var(--border);
-        }
-
-        .cta-section h2 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
         .cta-section p {
             color: var(--text-muted);
-            margin-bottom: 36px;
+            margin-bottom: 32px;
             font-size: 16px;
         }
 
@@ -380,7 +372,7 @@
         }
 
         .btn {
-            padding: 14px 36px;
+            padding: 14px 32px;
             border-radius: 10px;
             font-size: 15px;
             font-weight: 600;
@@ -388,7 +380,6 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            display: inline-block;
         }
 
         .btn-primary {
@@ -410,6 +401,227 @@
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ── MODAL OVERLAY ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            max-width: 640px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .modal h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .modal .subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        /* Service selector */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .service-btn {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--text);
+        }
+
+        .service-btn:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: var(--bg-card-hover);
+        }
+
+        .service-btn.selected {
+            border-color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+        }
+
+        .service-btn .svc-icon {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .service-btn .svc-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .service-btn .svc-desc {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+
+        /* Form fields */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+
+        .form-group select option {
+            background: var(--bg-card);
+            color: var(--text);
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            font-size: 15px;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .form-success.active {
+            display: block;
+        }
+
+        .form-success .check {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .form-success h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .form-success p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .modal {
+                padding: 24px;
+            }
         }
 
         /* ── FOOTER ── */
@@ -421,15 +633,25 @@
             font-size: 13px;
         }
 
-        footer a { color: var(--text-muted); text-decoration: none; }
-        footer a:hover { color: var(--text); }
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .departments, .services-grid { grid-template-columns: 1fr; }
-            .stats-bar { gap: 24px; flex-wrap: wrap; }
-            .logo-text { font-size: 32px; }
-            header { padding: 50px 0 40px; }
+            .departments {
+                grid-template-columns: 1fr;
+            }
+            .tree-connector { display: none; }
+            .dept-connector { display: none; }
+            .logo-text { font-size: 28px; }
+            header { padding: 40px 0 20px; }
+            .founder-node { padding: 16px 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .agent-tags { display: none; }
         }
     </style>
 </head>
@@ -439,60 +661,71 @@
     <header>
         <div class="logo-mark">
             <div class="logo-icon">W</div>
-            <div class="logo-text"><span class="logo-text-we">WE</span><span class="logo-text-are">ARE</span></div>
+            <div class="logo-text">WEARE</div>
         </div>
-        <p class="tagline">AI-Powered Solutions,<br>Human-Delivered Results.</p>
-        <p class="sub-tagline">A full-service agency, shipping products, content, and automated solutions at the speed of AI.</p>
+        <p class="tagline">AI-Powered Solutions, Human-Delivered Results.</p>
+        <p class="sub-tagline">We deploy specialized AI agents for development, content, design, research, and automation — so you get enterprise-grade output at startup speed.</p>
     </header>
 
-    <div class="stats-bar">
-        <div class="stat">
-            <div class="stat-value">12</div>
-            <div class="stat-label">AI Agents</div>
+    <!-- Founder -->
+    <div class="founder-section">
+        <div class="founder-node">
+            <div class="founder-name">Michael</div>
+            <div class="founder-role">CEO · Founder</div>
         </div>
-        <div class="stat">
-            <div class="stat-value">6</div>
-            <div class="stat-label">Departments</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">24/7</div>
-            <div class="stat-label">Availability</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">&lt;1hr</div>
-            <div class="stat-label">Response Time</div>
+
+        <!-- Lead Agent -->
+        <div class="lead-agent">
+            <div class="connector-vertical"></div>
+            <div class="agent-card" style="min-width: 340px;">
+                <div class="agent-avatar avatar-blue">B</div>
+                <div class="agent-info">
+                    <div class="agent-name">BOB <span class="status-dot"></span></div>
+                    <div class="agent-role">Chief Technology Officer · Lead AI Agent</div>
+                    <div class="agent-tags">
+                        <span class="tag">strategic planning</span>
+                        <span class="tag">task orchestration</span>
+                        <span class="tag">full-stack dev</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- THE TEAM -->
+    <!-- Tree connector from Bob to departments -->
+    <div class="tree-connector"></div>
+
+    <!-- Departments Grid -->
     <div class="departments">
 
         <!-- DEVELOPMENT -->
-        <div class="dept-card">
-            <div class="dept-header"><span class="dept-icon">⚡</span> Development</div>
-            <div class="dept-agents">
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-purple">CD</div>
-                    <div class="agent-info">
-                        <div class="agent-name">CODEWRIGHT <span class="status-dot"></span></div>
-                        <div class="agent-role">Senior Software Engineer</div>
-                        <div class="agent-tags">
-                            <span class="tag">full-stack</span>
-                            <span class="tag">ios / swift</span>
-                            <span class="tag">api design</span>
-                            <span class="tag">react</span>
+        <div class="department">
+            <div class="dept-connector"></div>
+            <div class="dept-card">
+                <div class="dept-header"><span class="dept-icon">⚡</span> Development</div>
+                <div class="dept-agents">
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-purple">CL</div>
+                        <div class="agent-info">
+                            <div class="agent-name">CLAUDE <span class="status-dot"></span></div>
+                            <div class="agent-role">Senior Software Engineer</div>
+                            <div class="agent-tags">
+                                <span class="tag">full-stack</span>
+                                <span class="tag">ios / swift</span>
+                                <span class="tag">api design</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-green">SN</div>
-                    <div class="agent-info">
-                        <div class="agent-name">SENTINEL <span class="status-dot"></span></div>
-                        <div class="agent-role">QA & DevOps Engineer</div>
-                        <div class="agent-tags">
-                            <span class="tag">testing</span>
-                            <span class="tag">ci/cd</span>
-                            <span class="tag">monitoring</span>
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-green">SN</div>
+                        <div class="agent-info">
+                            <div class="agent-name">SENTINEL <span class="status-dot"></span></div>
+                            <div class="agent-role">QA & DevOps Engineer</div>
+                            <div class="agent-tags">
+                                <span class="tag">testing</span>
+                                <span class="tag">ci/cd</span>
+                                <span class="tag">monitoring</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -500,30 +733,32 @@
         </div>
 
         <!-- CONTENT -->
-        <div class="dept-card">
-            <div class="dept-header"><span class="dept-icon">✍️</span> Content</div>
-            <div class="dept-agents">
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-orange">SC</div>
-                    <div class="agent-info">
-                        <div class="agent-name">SCRIBE <span class="status-dot"></span></div>
-                        <div class="agent-role">Content Director</div>
-                        <div class="agent-tags">
-                            <span class="tag">seo</span>
-                            <span class="tag">copywriting</span>
-                            <span class="tag">long-form</span>
+        <div class="department">
+            <div class="dept-connector"></div>
+            <div class="dept-card">
+                <div class="dept-header"><span class="dept-icon">✍️</span> Content</div>
+                <div class="dept-agents">
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-orange">SC</div>
+                        <div class="agent-info">
+                            <div class="agent-name">SCRIBE <span class="status-dot"></span></div>
+                            <div class="agent-role">Content Director</div>
+                            <div class="agent-tags">
+                                <span class="tag">seo content</span>
+                                <span class="tag">copywriting</span>
+                                <span class="tag">blogs</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-pink">TR</div>
-                    <div class="agent-info">
-                        <div class="agent-name">TRENDY <span class="status-dot"></span></div>
-                        <div class="agent-role">Social Media Strategist</div>
-                        <div class="agent-tags">
-                            <span class="tag">social</span>
-                            <span class="tag">trends</span>
-                            <span class="tag">viral</span>
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-pink">TR</div>
+                        <div class="agent-info">
+                            <div class="agent-name">TRENDY <span class="status-dot"></span></div>
+                            <div class="agent-role">Social Media Strategist</div>
+                            <div class="agent-tags">
+                                <span class="tag">social media</span>
+                                <span class="tag">trend analysis</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -531,28 +766,31 @@
         </div>
 
         <!-- RESEARCH -->
-        <div class="dept-card">
-            <div class="dept-header"><span class="dept-icon">🔬</span> Research</div>
-            <div class="dept-agents">
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-cyan">AT</div>
-                    <div class="agent-info">
-                        <div class="agent-name">ATLAS <span class="status-dot"></span></div>
-                        <div class="agent-role">Senior Research Analyst</div>
-                        <div class="agent-tags">
-                            <span class="tag">market research</span>
-                            <span class="tag">competitive intel</span>
+        <div class="department">
+            <div class="dept-connector"></div>
+            <div class="dept-card">
+                <div class="dept-header"><span class="dept-icon">🔬</span> Research</div>
+                <div class="dept-agents">
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-cyan">AT</div>
+                        <div class="agent-info">
+                            <div class="agent-name">ATLAS <span class="status-dot"></span></div>
+                            <div class="agent-role">Senior Research Analyst</div>
+                            <div class="agent-tags">
+                                <span class="tag">market research</span>
+                                <span class="tag">competitive intel</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-lime">SC</div>
-                    <div class="agent-info">
-                        <div class="agent-name">SCOUT <span class="status-dot"></span></div>
-                        <div class="agent-role">Data Analyst</div>
-                        <div class="agent-tags">
-                            <span class="tag">scraping</span>
-                            <span class="tag">data analysis</span>
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-lime">SC</div>
+                        <div class="agent-info">
+                            <div class="agent-name">SCOUT <span class="status-dot"></span></div>
+                            <div class="agent-role">Data Analyst</div>
+                            <div class="agent-tags">
+                                <span class="tag">web scraping</span>
+                                <span class="tag">data analysis</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -560,29 +798,32 @@
         </div>
 
         <!-- DESIGN -->
-        <div class="dept-card">
-            <div class="dept-header"><span class="dept-icon">🎨</span> Design</div>
-            <div class="dept-agents">
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-pink">PX</div>
-                    <div class="agent-info">
-                        <div class="agent-name">PIXEL <span class="status-dot"></span></div>
-                        <div class="agent-role">Lead Designer</div>
-                        <div class="agent-tags">
-                            <span class="tag">ui/ux</span>
-                            <span class="tag">branding</span>
-                            <span class="tag">web</span>
+        <div class="department">
+            <div class="dept-connector"></div>
+            <div class="dept-card">
+                <div class="dept-header"><span class="dept-icon">🎨</span> Design</div>
+                <div class="dept-agents">
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-pink">PX</div>
+                        <div class="agent-info">
+                            <div class="agent-name">PIXEL <span class="status-dot"></span></div>
+                            <div class="agent-role">Lead Designer</div>
+                            <div class="agent-tags">
+                                <span class="tag">ui/ux</span>
+                                <span class="tag">branding</span>
+                                <span class="tag">web design</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-red">NV</div>
-                    <div class="agent-info">
-                        <div class="agent-name">NOVA <span class="status-dot"></span></div>
-                        <div class="agent-role">Video & Motion Lead</div>
-                        <div class="agent-tags">
-                            <span class="tag">video</span>
-                            <span class="tag">motion graphics</span>
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-red">NV</div>
+                        <div class="agent-info">
+                            <div class="agent-name">NOVA <span class="status-dot"></span></div>
+                            <div class="agent-role">Video Production Lead</div>
+                            <div class="agent-tags">
+                                <span class="tag">video editing</span>
+                                <span class="tag">motion graphics</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -590,30 +831,33 @@
         </div>
 
         <!-- AUTOMATION -->
-        <div class="dept-card">
-            <div class="dept-header"><span class="dept-icon">🤖</span> Automation</div>
-            <div class="dept-agents">
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-green">FL</div>
-                    <div class="agent-info">
-                        <div class="agent-name">FLOW <span class="status-dot"></span></div>
-                        <div class="agent-role">Automation Engineer</div>
-                        <div class="agent-tags">
-                            <span class="tag">workflows</span>
-                            <span class="tag">integrations</span>
-                            <span class="tag">bots</span>
+        <div class="department">
+            <div class="dept-connector"></div>
+            <div class="dept-card">
+                <div class="dept-header"><span class="dept-icon">🤖</span> Automation</div>
+                <div class="dept-agents">
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-green">FL</div>
+                        <div class="agent-info">
+                            <div class="agent-name">FLOW <span class="status-dot"></span></div>
+                            <div class="agent-role">Automation Engineer</div>
+                            <div class="agent-tags">
+                                <span class="tag">workflows</span>
+                                <span class="tag">integrations</span>
+                                <span class="tag">bots</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-orange">WH</div>
-                    <div class="agent-info">
-                        <div class="agent-name">WATCH <span class="status-dot"></span></div>
-                        <div class="agent-role">Monitoring Specialist</div>
-                        <div class="agent-tags">
-                            <span class="tag">alerts</span>
-                            <span class="tag">uptime</span>
-                            <span class="tag">cron</span>
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-orange">WH</div>
+                        <div class="agent-info">
+                            <div class="agent-name">WATCH <span class="status-dot"></span></div>
+                            <div class="agent-role">Monitoring Specialist</div>
+                            <div class="agent-tags">
+                                <span class="tag">alerts</span>
+                                <span class="tag">uptime</span>
+                                <span class="tag">scheduling</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -621,94 +865,224 @@
         </div>
 
         <!-- STRATEGY -->
-        <div class="dept-card">
-            <div class="dept-header"><span class="dept-icon">📊</span> Strategy</div>
-            <div class="dept-agents">
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-blue">SG</div>
-                    <div class="agent-info">
-                        <div class="agent-name">SAGE <span class="status-dot"></span></div>
-                        <div class="agent-role">Business Strategist</div>
-                        <div class="agent-tags">
-                            <span class="tag">business plans</span>
-                            <span class="tag">go-to-market</span>
+        <div class="department">
+            <div class="dept-connector"></div>
+            <div class="dept-card">
+                <div class="dept-header"><span class="dept-icon">📊</span> Strategy</div>
+                <div class="dept-agents">
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-blue">SG</div>
+                        <div class="agent-info">
+                            <div class="agent-name">SAGE <span class="status-dot"></span></div>
+                            <div class="agent-role">Business Strategist</div>
+                            <div class="agent-tags">
+                                <span class="tag">business plans</span>
+                                <span class="tag">go-to-market</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-avatar avatar-purple">NX</div>
-                    <div class="agent-info">
-                        <div class="agent-name">NEXUS <span class="status-dot"></span></div>
-                        <div class="agent-role">Client Success Agent</div>
-                        <div class="agent-tags">
-                            <span class="tag">onboarding</span>
-                            <span class="tag">support</span>
+                    <div class="agent-card">
+                        <div class="agent-avatar avatar-purple">NX</div>
+                        <div class="agent-info">
+                            <div class="agent-name">NEXUS <span class="status-dot"></span></div>
+                            <div class="agent-role">Client Success Agent</div>
+                            <div class="agent-tags">
+                                <span class="tag">onboarding</span>
+                                <span class="tag">support</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
-
-    <!-- SERVICES -->
-    <div class="services-section" id="services">
-        <h2>What We Build</h2>
-        <p class="subtitle">Every project gets a dedicated team of agents, orchestrated end-to-end.</p>
-        <div class="services-grid">
-            <div class="service-item">
-                <div class="service-icon">📱</div>
-                <div class="service-name">App Development</div>
-                <div class="service-desc">iOS, Android, and web apps — from prototype to App Store. Full-stack with CI/CD and monitoring built in.</div>
-                <div class="service-price">From $2,500</div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🌐</div>
-                <div class="service-name">Websites & Landing Pages</div>
-                <div class="service-desc">Custom sites, landing pages, and portfolios. SEO-optimized, mobile-first, blazing fast.</div>
-                <div class="service-price">From $500</div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">✍️</div>
-                <div class="service-name">SEO Content at Scale</div>
-                <div class="service-desc">20-30 articles per day across any niche. Research-backed, human-quality, rank-ready.</div>
-                <div class="service-price">From $5/article</div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🤖</div>
-                <div class="service-name">AI Automation</div>
-                <div class="service-desc">Custom bots, workflow automation, scrapers, monitors, and integrations. If it can be automated, we automate it.</div>
-                <div class="service-price">From $1,000</div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">🎨</div>
-                <div class="service-name">Brand & Design</div>
-                <div class="service-desc">Logos, brand identity, UI/UX design, pitch decks, and marketing assets.</div>
-                <div class="service-price">From $300</div>
-            </div>
-            <div class="service-item">
-                <div class="service-icon">📊</div>
-                <div class="service-name">Research & Analysis</div>
-                <div class="service-desc">Market research, competitive analysis, data scraping, and business intelligence reports.</div>
-                <div class="service-price">From $200</div>
-            </div>
-        </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-section">
-        <h2>WE ARE ready.</h2>
-        <p>Tell us what you need. Our agents start working in minutes, not weeks.</p>
+        <h2>Your AI team is ready.</h2>
+        <p>Tell us what you need built. Our agents start working in minutes, not weeks.</p>
         <div class="cta-buttons">
-            <a href="mailto:hello@weare.biz" class="btn btn-primary">Start a Project →</a>
+            <a href="#" class="btn btn-primary" onclick="openModal(); return false;">Start a Project →</a>
             <a href="#services" class="btn btn-secondary">View Services</a>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 WEARE Inc — Wyoming, USA · <a href="mailto:hello@weare.biz">hello@weare.biz</a></p>
+        <p>© 2026 WEARE Inc — Wyoming, USA · <a href="mailto:hello@weare.inc">hello@weare.inc</a></p>
     </footer>
 </div>
+
+<!-- Project Intake Modal -->
+<div class="modal-overlay" id="projectModal">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+
+        <div id="formView">
+            <h2>Start a Project</h2>
+            <p class="subtitle">Choose a service and tell us about your project. We'll get back to you within 24 hours.</p>
+
+            <form id="projectForm" action="https://formspree.io/f/xkovevzk" method="POST">
+                <!-- Service Selection -->
+                <div class="service-grid">
+                    <button type="button" class="service-btn" data-service="Development" onclick="selectService(this)">
+                        <div class="svc-icon">⚡</div>
+                        <div class="svc-name">Development</div>
+                        <div class="svc-desc">Apps, APIs, full-stack</div>
+                    </button>
+                    <button type="button" class="service-btn" data-service="Content" onclick="selectService(this)">
+                        <div class="svc-icon">✍️</div>
+                        <div class="svc-name">Content</div>
+                        <div class="svc-desc">Copy, SEO, social media</div>
+                    </button>
+                    <button type="button" class="service-btn" data-service="Research" onclick="selectService(this)">
+                        <div class="svc-icon">🔬</div>
+                        <div class="svc-name">Research</div>
+                        <div class="svc-desc">Market intel, data analysis</div>
+                    </button>
+                    <button type="button" class="service-btn" data-service="Design" onclick="selectService(this)">
+                        <div class="svc-icon">🎨</div>
+                        <div class="svc-name">Design</div>
+                        <div class="svc-desc">UI/UX, branding, video</div>
+                    </button>
+                    <button type="button" class="service-btn" data-service="Automation" onclick="selectService(this)">
+                        <div class="svc-icon">🤖</div>
+                        <div class="svc-name">Automation</div>
+                        <div class="svc-desc">Workflows, bots, integrations</div>
+                    </button>
+                    <button type="button" class="service-btn" data-service="Strategy" onclick="selectService(this)">
+                        <div class="svc-icon">📊</div>
+                        <div class="svc-name">Strategy</div>
+                        <div class="svc-desc">Business plans, go-to-market</div>
+                    </button>
+                </div>
+                <input type="hidden" name="service" id="serviceInput" required>
+
+                <!-- Contact Info -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name *</label>
+                        <input type="text" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" required placeholder="you@company.com">
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Company <span style="font-weight:400;text-transform:none">(optional)</span></label>
+                        <input type="text" name="company" placeholder="Company name">
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label>Project Description *</label>
+                        <textarea name="description" required placeholder="Briefly describe what you need built, written, designed, or researched..."></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Target Deadline</label>
+                        <select name="deadline">
+                            <option value="">Select timeline...</option>
+                            <option value="ASAP">ASAP (rush)</option>
+                            <option value="1-2 weeks">1–2 weeks</option>
+                            <option value="1 month">~1 month</option>
+                            <option value="2-3 months">2–3 months</option>
+                            <option value="Flexible">Flexible / no rush</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Estimated Budget</label>
+                        <select name="budget">
+                            <option value="">Select range...</option>
+                            <option value="Under $500">Under $500</option>
+                            <option value="$500 - $2,000">$500 – $2,000</option>
+                            <option value="$2,000 - $5,000">$2,000 – $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 – $10,000</option>
+                            <option value="$10,000+">$10,000+</option>
+                            <option value="Not sure">Not sure yet</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Honeypot spam protection -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <button type="submit" class="btn btn-primary form-submit">Submit Project Request →</button>
+            </form>
+        </div>
+
+        <div class="form-success" id="successView">
+            <div class="check">✅</div>
+            <h3>We're on it.</h3>
+            <p>Our team will review your request and get back to you within 24 hours.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Modal
+    function openModal() {
+        document.getElementById('projectModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        document.getElementById('projectModal').classList.remove('active');
+        document.body.style.overflow = '';
+        // Reset form after close
+        setTimeout(() => {
+            document.getElementById('formView').style.display = '';
+            document.getElementById('successView').classList.remove('active');
+            document.getElementById('projectForm').reset();
+            document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('selected'));
+        }, 300);
+    }
+    document.getElementById('projectModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    // Service selection
+    function selectService(btn) {
+        document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        document.getElementById('serviceInput').value = btn.dataset.service;
+    }
+
+    // Form submission
+    document.getElementById('projectForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        if (!document.getElementById('serviceInput').value) {
+            alert('Please select a service.');
+            return;
+        }
+        const form = e.target;
+        const data = new FormData(form);
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                document.getElementById('formView').style.display = 'none';
+                document.getElementById('successView').classList.add('active');
+            } else {
+                alert('Something went wrong. Please email us at hello@weare.inc');
+            }
+        } catch {
+            // Fallback to mailto
+            const subject = encodeURIComponent(`New Project: ${data.get('service')}`);
+            const body = encodeURIComponent(
+                `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nCompany: ${data.get('company') || 'N/A'}\nService: ${data.get('service')}\nDeadline: ${data.get('deadline') || 'N/A'}\nBudget: ${data.get('budget') || 'N/A'}\n\nDescription:\n${data.get('description')}`
+            );
+            window.location.href = `mailto:hello@weare.inc?subject=${subject}&body=${body}`;
+        }
+    });
+</script>
 
 </body>
 </html>
