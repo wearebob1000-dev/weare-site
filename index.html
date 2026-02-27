@@ -453,6 +453,69 @@
         .avatar-cyan { background: var(--accent-cyan); }
         .avatar-lime { background: var(--accent-lime); }
 
+        /* ── SERVICES SECTION ── */
+        .services-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .services-section h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .services-section .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            font-size: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .service-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .service-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .service-price {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
         /* ── PRODUCTS SECTION ── */
         .products-section {
             text-align: center;
@@ -539,6 +602,7 @@
         }
 
         @media (max-width: 768px) {
+            .services-grid,
             .products-grid {
                 grid-template-columns: 1fr;
                 max-width: 400px;
@@ -1117,6 +1181,50 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- SERVICES -->
+    <div class="services-section" id="services">
+        <h2>What We Build</h2>
+        <p class="subtitle">Every project gets a dedicated team of agents, orchestrated end-to-end.</p>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">📱</div>
+                <div class="service-name">App Development</div>
+                <div class="service-desc">iOS, Android, and web apps — from prototype to App Store. Full-stack with CI/CD and monitoring built in.</div>
+                <div class="service-price">From $2,500</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🌐</div>
+                <div class="service-name">Websites & Landing Pages</div>
+                <div class="service-desc">Custom sites, landing pages, and portfolios. SEO-optimized, mobile-first, blazing fast.</div>
+                <div class="service-price">From $500</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">✍️</div>
+                <div class="service-name">SEO Content at Scale</div>
+                <div class="service-desc">20-30 articles per day across any niche. Research-backed, human-quality, rank-ready.</div>
+                <div class="service-price">From $5/article</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🤖</div>
+                <div class="service-name">AI Automation</div>
+                <div class="service-desc">Custom bots, workflow automation, scrapers, monitors, and integrations. If it can be automated, we automate it.</div>
+                <div class="service-price">From $1,000</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🎨</div>
+                <div class="service-name">Brand & Design</div>
+                <div class="service-desc">Logos, brand identity, UI/UX design, pitch decks, and marketing assets.</div>
+                <div class="service-price">From $300</div>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📊</div>
+                <div class="service-name">Research & Analysis</div>
+                <div class="service-desc">Market research, competitive analysis, data scraping, and business intelligence reports.</div>
+                <div class="service-price">From $200</div>
+            </div>
+        </div>
     </div>
 
     <!-- PRODUCTS -->
